@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <extension key="nl.sp.spgeneric" type="module">
   <file>spgeneric</file>
-  <name>FIXME</name>
-  <description>FIXME</description>
-  <license>AGPL-3.0</license>
+  <name>SP Generic</name>
+  <description>Generic customisations for SP</description>
+  <license>Academic free license v3.0</license>
   <maintainer>
     <author>Jaap Jansma</author>
     <email>jaap.jansma@civicoop.org</email>
