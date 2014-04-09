@@ -7,36 +7,233 @@
       <title>Migratie</title>
       <extends>Contact</extends>
       <style>Inline</style>
-      <collapse_display>0</collapse_display>
+      <collapse_display>1</collapse_display>
       <help_pre></help_pre>
       <help_post></help_post>
-      <weight>3</weight>
+      <weight>1</weight>
       <is_active>1</is_active>
       <table_name>civicrm_value_migratie_3</table_name>
       <is_multiple>0</is_multiple>
       <collapse_adv_display>0</collapse_adv_display>
-      <created_date>2014-01-31 14:03:35</created_date>
+      <created_date>2014-04-08 10:24:34</created_date>
       <is_reserved>0</is_reserved>
     </CustomGroup>
   </CustomGroups>
   <CustomFields>
     <CustomField>
-      <name>SP_Lidnummer</name>
-      <label>SP Lidnummer</label>
+      <name>Bron</name>
+      <label>Bron</label>
       <data_type>String</data_type>
-      <html_type>Text</html_type>
+      <html_type>Select</html_type>
       <is_required>0</is_required>
-      <is_searchable>1</is_searchable>
+      <is_searchable>0</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>1</weight>
-      <help_pre>Bevat het oude lidnummer zoals deze bekend was in Manyware.</help_pre>
+      <weight>6</weight>
       <is_active>1</is_active>
-      <is_view>1</is_view>
+      <is_view>0</is_view>
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
-      <column_name>sp_lidnummer_5</column_name>
+      <column_name>bron_7</column_name>
+      <option_group_name>bron_20140408105127</option_group_name>
       <custom_group_name>Migratie</custom_group_name>
     </CustomField>
   </CustomFields>
+  <OptionGroups>
+    <OptionGroup>
+      <name>bron_20140408105127</name>
+      <title>Bron</title>
+      <is_reserved>1</is_reserved>
+      <is_active>1</is_active>
+    </OptionGroup>
+  </OptionGroups>
+  <OptionValues>
+    <OptionValue>
+      <label>Website</label>
+      <value>1</value>
+      <name>Website</name>
+      <is_default>0</is_default>
+      <weight>1</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Nieuwsbrief</label>
+      <value>2</value>
+      <name>Nieuwsbrief</name>
+      <is_default>0</is_default>
+      <weight>2</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Verkiezingen</label>
+      <value>3</value>
+      <name>Verkiezingen</name>
+      <is_default>0</is_default>
+      <weight>3</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Actie landelijk</label>
+      <value>4</value>
+      <name>Actie_landelijk</name>
+      <is_default>0</is_default>
+      <weight>4</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Afdeling</label>
+      <value>5</value>
+      <name>Afdeling</name>
+      <is_default>0</is_default>
+      <weight>5</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>ZO-krant</label>
+      <value>6</value>
+      <name>ZO_krant</name>
+      <is_default>0</is_default>
+      <weight>6</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Ouderenkrant</label>
+      <value>7</value>
+      <name>Ouderenkrant</name>
+      <is_default>0</is_default>
+      <weight>7</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Solidair-krant</label>
+      <value>8</value>
+      <name>Solidair_krant</name>
+      <is_default>0</is_default>
+      <weight>8</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>ROOD</label>
+      <value>9</value>
+      <name>ROOD</name>
+      <is_default>0</is_default>
+      <weight>9</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Tribune-bon</label>
+      <value>10</value>
+      <name>Tribune_bon</name>
+      <is_default>0</is_default>
+      <weight>10</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Drukwerk overig</label>
+      <value>11</value>
+      <name>Drukwerk_overig</name>
+      <is_default>0</is_default>
+      <weight>11</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Ledenwerfcampagne</label>
+      <value>12</value>
+      <name>Ledenwerfcampagne</name>
+      <is_default>0</is_default>
+      <weight>12</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Lid-werft-lid</label>
+      <value>13</value>
+      <name>Lid_werft_lid</name>
+      <is_default>0</is_default>
+      <weight>13</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Terugwerving</label>
+      <value>14</value>
+      <name>Terugwerving</name>
+      <is_default>0</is_default>
+      <weight>14</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Infoaanvraag</label>
+      <value>15</value>
+      <name>Infoaanvraag</name>
+      <is_default>0</is_default>
+      <weight>15</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Evenement</label>
+      <value>16</value>
+      <name>Evenement</name>
+      <is_default>0</is_default>
+      <weight>16</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Overig</label>
+      <value>17</value>
+      <name>Overig</name>
+      <is_default>0</is_default>
+      <weight>17</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+  </OptionValues>
 </CustomData>
