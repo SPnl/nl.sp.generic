@@ -48,8 +48,18 @@ function spgeneric_civicrm_uninstall() {
 function spgeneric_civicrm_enable() {
   
   _spgeneric_location_type('Bezoekadres', 1);
-  _spgeneric_optiongroup_value('Cursus', 14, 1);
   _spgeneric_static_group_value('Postvak', 1, 1);
+  _spgeneric_static_group_value('Cursus', 14, 1);
+  _spgeneric_membership_type("Abonnee SPanning", array(
+		'domain_id' => 1,
+		'member_of_contact_id' => 1,
+		'financial_type_id' => 2,
+		'duration_unit' => 'year',
+		'duration_interval' => 1,
+		'is_active' => 1,
+		'version' => 3
+	)
+  , 1);
   return _spgeneric_civix_civicrm_enable();
 }
 
@@ -61,8 +71,9 @@ function spgeneric_civicrm_enable() {
 function spgeneric_civicrm_disable() {
   
   _spgeneric_location_type('Bezoekadres', 0);
-  _spgeneric_optiongroup_value('Cursus', 14, 0);
   _spgeneric_static_group_value('Postvak', 1, 0);
+  _spgeneric_static_group_value('Cursus', 14, 0);
+  _spgeneric_membership_type("Abonnee SPanning", array(), 0);
   return _spgeneric_civix_civicrm_disable();
 }
 
@@ -78,18 +89,6 @@ function _spgeneric_location_type($name, $enabled) {
 	
 }
 
-function _spgeneric_optiongroup_value($name, $option_group_id, $enabled) {
-	
-	$ogvExists = civicrm_api('OptionValue', 'getsingle', array('version' => 3, 'name' => $name, 'option_group_id' => $option_group_id));
-	
-	if(!isset($ogvExists['id']) && $enabled) {
-		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'name' => $name, 'option_group_id' => $option_group_id, 'is_active' => $enabled));
-	} else if(isset($ogvExists['id'])) {
-		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'id' => $ogvExists['id'], 'is_active' => $enabled));
-	}
-	
-}
-
 function _spgeneric_static_group_value($label, $ogIdentifier, $enabled) {
 	
 	$ogvExists = civicrm_api('OptionValue', 'getsingle', array('version' => 3, 'label' => $label, 'option_group_id' => $ogIdentifier));
@@ -100,6 +99,20 @@ function _spgeneric_static_group_value($label, $ogIdentifier, $enabled) {
 		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'id' => $ogvExists['id'], 'is_active' => $enabled));
 	}
 	
+}
+
+function _spgeneric_membership_type($name, $arguments, $enabled) {
+	
+	$mbtExists = civicrm_api('MembershipType', 'getsingle', array("name" => "Abonnee SPanning", 'version' => 3));
+	if(!isset($mbtExists['id']) && $enabled) {
+		$arguments['name'] = $name;
+		$result = civicrm_api('MembershipType', 'create', $arguments);
+	} else {
+		$mbtExists['is_active'] = $enabled;
+		$mbtExists['version'] = 3;
+		$result = civicrm_api('MembershipType', 'create', $mbtExists);
+	}	
+
 }
 
 /**
