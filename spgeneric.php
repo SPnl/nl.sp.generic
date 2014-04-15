@@ -48,6 +48,7 @@ function spgeneric_civicrm_uninstall() {
 function spgeneric_civicrm_enable() {
   
   _spgeneric_location_type('Bezoekadres', 1);
+  _spgeneric_optiongroup_value('Cursus', 14, 1);
   _spgeneric_static_group_value('Postvak', 1, 1);
   return _spgeneric_civix_civicrm_enable();
 }
@@ -60,6 +61,7 @@ function spgeneric_civicrm_enable() {
 function spgeneric_civicrm_disable() {
   
   _spgeneric_location_type('Bezoekadres', 0);
+  _spgeneric_optiongroup_value('Cursus', 14, 0);
   _spgeneric_static_group_value('Postvak', 1, 0);
   return _spgeneric_civix_civicrm_disable();
 }
@@ -72,6 +74,18 @@ function _spgeneric_location_type($name, $enabled) {
 		$result = civicrm_api('LocationType', 'create', array('version' => 3, 'name' => $name, 'display_name' => $name, 'is_active' => $enabled));
 	} else if(isset($ltExists['id'])) {
 		$result = civicrm_api('LocationType', 'create', array('version' => 3, 'id' => $ltExists['id'], 'is_active' => $enabled));
+	}
+	
+}
+
+function _spgeneric_optiongroup_value($name, $option_group_id, $enabled) {
+	
+	$ogvExists = civicrm_api('OptionValue', 'getsingle', array('version' => 3, 'name' => $name, 'option_group_id' => $option_group_id));
+	
+	if(!isset($ogvExists['id']) && $enabled) {
+		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'name' => $name, 'option_group_id' => $option_group_id, 'is_active' => $enabled));
+	} else if(isset($ogvExists['id'])) {
+		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'id' => $ogvExists['id'], 'is_active' => $enabled));
 	}
 	
 }
