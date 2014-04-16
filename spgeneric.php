@@ -114,7 +114,7 @@ function _spgeneric_static_group_value($label, $ogIdentifier, $enabled) {
 
 function _spgeneric_membership_type($name, $arguments, $enabled) {
 	
-	$mbtExists = civicrm_api('MembershipType', 'getsingle', array("name" => "Abonnee SPanning", 'version' => 3));
+	$mbtExists = civicrm_api('MembershipType', 'getsingle', array("name" => $name, 'version' => 3));
 	if(!isset($mbtExists['id']) && $enabled) {
 		$arguments['name'] = $name;
 		$result = civicrm_api('MembershipType', 'create', $arguments);
