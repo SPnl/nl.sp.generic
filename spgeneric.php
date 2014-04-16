@@ -59,6 +59,16 @@ function spgeneric_civicrm_enable() {
 		'is_active' => 1,
 		'version' => 3
 	)
+  , 1);  
+  _spgeneric_membership_type("Abonnee SPeciaal", array(
+		'domain_id' => 1,
+		'member_of_contact_id' => 1,
+		'financial_type_id' => 2,
+		'duration_unit' => 'year',
+		'duration_interval' => 1,
+		'is_active' => 1,
+		'version' => 3
+	)
   , 1);
   return _spgeneric_civix_civicrm_enable();
 }
@@ -74,6 +84,7 @@ function spgeneric_civicrm_disable() {
   _spgeneric_static_group_value('Postvak', 1, 0);
   _spgeneric_static_group_value('Cursus', 14, 0);
   _spgeneric_membership_type("Abonnee SPanning", array(), 0);
+  _spgeneric_membership_type("Abonnee SPeciaal", array(), 0);
   return _spgeneric_civix_civicrm_disable();
 }
 
