@@ -72,11 +72,69 @@
       <option_group_name>bron_20140408105127</option_group_name>
       <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
     </CustomField>
+    <CustomField>
+      <name>Betaalmethode</name>
+      <label>Betaalmethode</label>
+      <data_type>String</data_type>
+      <html_type>Select</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>4</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>40</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>betaalmethode_3</column_name>
+      <option_group_name>betaalmethode_20140422102845</option_group_name>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>BIC</name>
+      <label>BIC</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>2</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>30</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>bic_4</column_name>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>IBAN</name>
+      <label>IBAN</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>3</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>iban_5</column_name>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
   </CustomFields>
   <OptionGroups>
     <OptionGroup>
       <name>bron_20140408105127</name>
       <title>Bron</title>
+      <is_reserved>1</is_reserved>
+      <is_active>1</is_active>
+    </OptionGroup>
+    <OptionGroup>
+      <name>betaalmethode_20140422102845</name>
+      <title>Betaalmethode</title>
       <is_reserved>1</is_reserved>
       <is_active>1</is_active>
     </OptionGroup>
@@ -139,19 +197,8 @@
     </OptionValue>
     <OptionValue>
       <label>ZO-krant</label>
-      <value>6</value>
-      <name>ZO_krant</name>
-      <is_default>0</is_default>
-      <weight>6</weight>
-      <is_optgroup>0</is_optgroup>
-      <is_reserved>0</is_reserved>
-      <is_active>1</is_active>
-      <option_group_name>bron_20140408105127</option_group_name>
-    </OptionValue>
-    <OptionValue>
-      <label>Ouderenkrant</label>
       <value>7</value>
-      <name>Ouderenkrant</name>
+      <name>ZO_krant</name>
       <is_default>0</is_default>
       <weight>7</weight>
       <is_optgroup>0</is_optgroup>
@@ -160,9 +207,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Solidair-krant</label>
+      <label>Ouderenkrant</label>
       <value>8</value>
-      <name>Solidair_krant</name>
+      <name>Ouderenkrant</name>
       <is_default>0</is_default>
       <weight>8</weight>
       <is_optgroup>0</is_optgroup>
@@ -171,9 +218,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>ROOD</label>
+      <label>Solidair-krant</label>
       <value>9</value>
-      <name>ROOD</name>
+      <name>Solidair_krant</name>
       <is_default>0</is_default>
       <weight>9</weight>
       <is_optgroup>0</is_optgroup>
@@ -182,9 +229,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Tribune-bon</label>
+      <label>ROOD</label>
       <value>10</value>
-      <name>Tribune_bon</name>
+      <name>ROOD</name>
       <is_default>0</is_default>
       <weight>10</weight>
       <is_optgroup>0</is_optgroup>
@@ -193,9 +240,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Drukwerk overig</label>
+      <label>Tribune-bon</label>
       <value>11</value>
-      <name>Drukwerk_overig</name>
+      <name>Tribune_bon</name>
       <is_default>0</is_default>
       <weight>11</weight>
       <is_optgroup>0</is_optgroup>
@@ -204,9 +251,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Ledenwerfcampagne</label>
+      <label>Drukwerk overig</label>
       <value>12</value>
-      <name>Ledenwerfcampagne</name>
+      <name>Drukwerk_overig</name>
       <is_default>0</is_default>
       <weight>12</weight>
       <is_optgroup>0</is_optgroup>
@@ -215,9 +262,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Lid-werft-lid</label>
+      <label>Ledenwerfcampagne</label>
       <value>13</value>
-      <name>Lid_werft_lid</name>
+      <name>Ledenwerfcampagne</name>
       <is_default>0</is_default>
       <weight>13</weight>
       <is_optgroup>0</is_optgroup>
@@ -226,9 +273,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Terugwerving</label>
+      <label>Lid-werft-lid</label>
       <value>14</value>
-      <name>Terugwerving</name>
+      <name>Lid_werft_lid</name>
       <is_default>0</is_default>
       <weight>14</weight>
       <is_optgroup>0</is_optgroup>
@@ -237,9 +284,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Infoaanvraag</label>
+      <label>Terugwerving</label>
       <value>15</value>
-      <name>Infoaanvraag</name>
+      <name>Terugwerving</name>
       <is_default>0</is_default>
       <weight>15</weight>
       <is_optgroup>0</is_optgroup>
@@ -248,9 +295,9 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Evenement</label>
+      <label>Infoaanvraag</label>
       <value>16</value>
-      <name>Evenement</name>
+      <name>Infoaanvraag</name>
       <is_default>0</is_default>
       <weight>16</weight>
       <is_optgroup>0</is_optgroup>
@@ -259,15 +306,70 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Overig</label>
+      <label>Evenement</label>
       <value>17</value>
-      <name>Overig</name>
+      <name>Evenement</name>
       <is_default>0</is_default>
       <weight>17</weight>
       <is_optgroup>0</is_optgroup>
       <is_reserved>0</is_reserved>
       <is_active>1</is_active>
       <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Overig</label>
+      <value>18</value>
+      <name>Overig</name>
+      <is_default>0</is_default>
+      <weight>18</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Telefonisch</label>
+      <value>6</value>
+      <name>Telefonisch</name>
+      <is_default>0</is_default>
+      <weight>6</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>bron_20140408105127</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Automatische incasso</label>
+      <value>Automatische incasso</value>
+      <name>Automatische_incasso</name>
+      <is_default>0</is_default>
+      <weight>1</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>betaalmethode_20140422102845</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Acceptgiro</label>
+      <value>Acceptgiro</value>
+      <name>Acceptgiro</name>
+      <is_default>0</is_default>
+      <weight>2</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>betaalmethode_20140422102845</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Periodieke overboeking</label>
+      <value>Periodieke overboeking</value>
+      <name>Periodieke_overboeking</name>
+      <is_default>0</is_default>
+      <weight>3</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>betaalmethode_20140422102845</option_group_name>
     </OptionValue>
   </OptionValues>
 </CustomData>

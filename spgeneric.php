@@ -54,7 +54,7 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'year',
+		'duration_unit' => 'lifetime',
 		'duration_interval' => 1,
 		'is_active' => 1,
 		'version' => 3
@@ -64,7 +64,7 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'year',
+		'duration_unit' => 'lifetime',
 		'duration_interval' => 1,
 		'is_active' => 1,
 		'version' => 3
