@@ -52,6 +52,12 @@ function spgeneric_civicrm_enable() {
   _spgeneric_static_group_value('Aan bestand toegevoegd', 2, 1);
   _spgeneric_static_group_value('Documenthistorie', 2, 1);
   _spgeneric_static_group_value('Cursus', 14, 1);
+  _spgeneric_contact_type("SP-Gemeente", "Gemeente van de SP", 1);
+  _spgeneric_contact_type("SP-Afdeling", "Afdeling van de SP", 1);
+  _spgeneric_contact_type("SP-Regio", "Regio van de SP", 1);
+  _spgeneric_contact_type("SP-Provincie", "Provincie van de SP", 1);
+  _spgeneric_contact_type("SP-Landelijk", "Landelijk van de SP", 1);
+  _spgeneric_contact_type("SP-Fractie", "Fractie van de SP", 1);
   _spgeneric_membership_type("Lid SP", array(
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
@@ -132,6 +138,44 @@ function spgeneric_civicrm_enable() {
 		'version' => 3
 	)
   , 1);
+  
+  _spgeneric_relationship_type(array(
+		'name_a_b' => 'sprel_gem_afdeling',
+		'name_b_a' => 'sprel_afdeling_gem',
+		'label_a_b' => 'is gemeente van',
+		'label_b_a' => 'heeft gemeente',
+		'contact_type_a' => 'organization',
+		'contact_type_b' => 'organization',
+		'contact_sub_type_a' => 'SP_Gemeente',
+		'contact_sub_type_b' => 'SP_Afdeling',
+		'description' => 'Relatie tussen SP-Afdeling en SP-Gemeente',
+		'version' => 3
+  ), 1);
+  _spgeneric_relationship_type(array(
+		'name_a_b' => 'sprel_afdeling_regio',
+		'name_b_a' => 'sprel_regio_afdeling',
+		'label_a_b' => 'is afdeling van',
+		'label_b_a' => 'heeft afdeling',
+		'contact_type_a' => 'organization',
+		'contact_type_b' => 'organization',
+		'contact_sub_type_a' => 'SP_Afdeling',
+		'contact_sub_type_b' => 'SP_Regio',
+		'description' => 'Relatie tussen SP-Regio en SP-Afdeling',
+		'version' => 3
+  ), 1);
+  _spgeneric_relationship_type(array(
+		'name_a_b' => 'sprel_regio_provincie',
+		'name_b_a' => 'sprel_provincie_regio',
+		'label_a_b' => 'is regio van',
+		'label_b_a' => 'heeft regio',
+		'contact_type_a' => 'organization',
+		'contact_type_b' => 'organization',
+		'contact_sub_type_a' => 'SP_Regio',
+		'contact_sub_type_b' => 'SP_Provincie',
+		'description' => 'Relatie tussen SP-Provincie en SP-Regio',
+		'version' => 3
+  ), 1);
+  
   return _spgeneric_civix_civicrm_enable();
 }
 
@@ -147,6 +191,12 @@ function spgeneric_civicrm_disable() {
   _spgeneric_static_group_value('Aan bestand toegevoegd', 2, 0);
   _spgeneric_static_group_value('Documenthistorie', 2, 0);
   _spgeneric_static_group_value('Cursus', 14, 0);
+  _spgeneric_contact_type("SP-Gemeente", "Gemeente van de SP", 0);
+  _spgeneric_contact_type("SP-Afdeling", "Afdeling van de SP", 0);
+  _spgeneric_contact_type("SP-Regio", "Regio van de SP", 0);
+  _spgeneric_contact_type("SP-Provincie", "Provincie van de SP", 0);
+  _spgeneric_contact_type("SP-Landelijk", "Landelijk van de SP", 0);
+  _spgeneric_contact_type("SP-Fractie", "Fractie van de SP", 0);
   _spgeneric_membership_type("Lid SP", array(), 0);
   _spgeneric_membership_type("Lid ROOD", array(), 0);
   _spgeneric_membership_type("Lid SP en ROOD", array(), 0);
@@ -155,6 +205,9 @@ function spgeneric_civicrm_disable() {
   _spgeneric_membership_type("Abonnee Tribune Gratis", array(), 0);
   _spgeneric_membership_type("Abonnee SPanning", array(), 0);
   _spgeneric_membership_type("Abonnee SPeciaal", array(), 0);
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gem_afdeling', 'name_b_a' => 'sprel_afdeling_gem', 'version' => 3), 0);
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_afdeling_regio', 'name_b_a' => 'sprel_regio_afdeling', 'version' => 3), 0);
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_regio_provincie', 'name_b_a' => 'sprel_provincie_regio', 'version' => 3), 0);
   return _spgeneric_civix_civicrm_disable();
 }
 
@@ -173,7 +226,6 @@ function _spgeneric_location_type($name, $enabled) {
 function _spgeneric_static_group_value($label, $ogIdentifier, $enabled) {
 	
 	$ogvExists = civicrm_api('OptionValue', 'getsingle', array('version' => 3, 'label' => $label, 'option_group_id' => $ogIdentifier));
-	
 	if(!isset($ogvExists['id']) && $enabled) {
 		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'label' => $label, 'option_group_id' => $ogIdentifier, 'is_active' => $enabled));
 	} else if(isset($ogvExists['id'])) {
@@ -195,6 +247,30 @@ function _spgeneric_membership_type($name, $arguments, $enabled) {
 	}	
 
 }
+
+function _spgeneric_contact_type($name, $description, $enabled) {
+	$ctExists = civicrm_api('ContactType', 'getsingle', array("name" => $name, 'label' => $name, 'description' => $description, 'parent_id' => 3, 'version' => 3));
+	if(!isset($ctExists['id']) && $enabled) {
+		$arguments = array("name" => $name, 'label' => $name, 'description' => $description, 'parent_id' => 3, 'version' => 3);
+		$result = civicrm_api('ContactType', 'create', $arguments);
+	} else {
+		$ctExists['is_active'] = $enabled;
+		$ctExists['version'] = 3;
+		$result = civicrm_api('ContactType', 'create', $ctExists);
+	}
+}
+
+function _spgeneric_relationship_type($arguments, $enabled) {
+	$relExists = civicrm_api('RelationshipType', 'getsingle', $arguments);
+	if(!isset($relExists['id']) && $enabled){
+		$result = civicrm_api('RelationshipType', 'create', $arguments);
+	} else {
+		$relExists['is_active'] = $enabled;
+		$relExists['version'] = 3;
+		$result = civicrm_api('RelationshipType', 'create', $relExists);
+	}
+}
+
 
 /**
  * Implementation of hook_civicrm_upgrade
