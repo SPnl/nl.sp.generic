@@ -218,6 +218,7 @@ function spgeneric_civicrm_disable() {
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_gem_afdeling', 'name_b_a' => 'sprel_afdeling_gem', 'version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_afdeling_regio', 'name_b_a' => 'sprel_regio_afdeling', 'version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_regio_provincie', 'name_b_a' => 'sprel_provincie_regio', 'version' => 3), 0);
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gezinslid_a', 'name_b_a' => 'sprel_gezinslid_b', 'version' => 3), 0);
   return _spgeneric_civix_civicrm_disable();
 }
 
@@ -329,4 +330,18 @@ function spgeneric_civicrm_caseTypes(&$caseTypes) {
  */
 function spgeneric_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
   _spgeneric_civix_civicrm_alterSettingsFolders($metaDataFolders);
+}
+
+/**
+ * 
+ * Implementation of hook_civicrm_buildForm
+ *
+ * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_buildForm
+ */
+function spgeneric_civicrm_buildForm($formName, &$form) {
+ if ($formName == 'CRM_Member_Form_Membership') {
+   //add template 
+   $toonGezinsleden = new CRM_Spgeneric_Buildform_ToonGezinsleden($form);
+   $toonGezinsleden->parse();
+ } 
 }

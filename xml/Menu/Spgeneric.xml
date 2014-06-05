@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+     <path>civicrm/ajax/spgeneric/toongezinsleden</path>
+     <page_callback>CRM_Spgeneric_Page_AJAX_ToonGezinsleden::autocomplete</page_callback>
+     <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
