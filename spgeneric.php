@@ -175,6 +175,16 @@ function spgeneric_civicrm_enable() {
 		'description' => 'Relatie tussen SP-Provincie en SP-Regio',
 		'version' => 3
   ), 1);
+  _spgeneric_relationship_type(array(
+		'name_a_b' => 'sprel_gezinslid_a',
+		'name_b_a' => 'sprel_gezinslid_b',
+		'label_a_b' => 'is gezinslid van',
+		'label_b_a' => 'heeft gezinslid',
+		'contact_type_a' => 'Individual',
+		'contact_type_b' => 'Individual',
+		'description' => 'Relatie tussen gezinsleden',
+		'version' => 3
+  ), 1);
   
   return _spgeneric_civix_civicrm_enable();
 }
