@@ -72,10 +72,13 @@ class CRM_Spgeneric_Buildform_ToonGezinsleden {
             `contact_a`.`sort_name` AS `contact_a_sort_name`,
             `contact_b`.`id` AS `contact_b_id`,
             `contact_b`.`display_name` AS `contact_b_display_name` ,
-            `contact_b`.`sort_name` AS `contact_b_sort_name`
+            `contact_b`.`sort_name` AS `contact_b_sort_name`,
+            `civicrm_relationship_type`.`label_a_b` AS `label_a_b`,
+            `civicrm_relationship_type`.`label_b_a` AS `label_b_a`
             FROM `civicrm_relationship` `r` 
             INNER JOIN `civicrm_contact` `contact_a` ON `contact_a`.`id` = `r`.`contact_id_a`
             INNER JOIN `civicrm_contact` `contact_b` ON `contact_b`.`id` = `r`.`contact_id_b`
+            INNER JOIN `civicrm_relationship_type` ON `civicrm_relationship_type`.`id` = `r`.`relationship_type_id`
             WHERE `r`.`relationship_type_id` = '" . $rel_type_id . "'
             AND (`r`.`contact_id_a` = '" . $contactId . "' OR `r`.`contact_id_b` = '" . $contactId . "')
             AND (`r`.`start_date` IS NULL OR `r`.`start_date` <= NOW()) 
@@ -87,10 +90,12 @@ class CRM_Spgeneric_Buildform_ToonGezinsleden {
           $relationship['contact_id'] = $dao->contact_b_id;
           $relationship['contact_name'] = $dao->contact_b_display_name;
           $relationship['contact_sort'] = $dao->contact_b_sort_name;
+          $relationship['label'] = $dao->label_a_b;
         } else {
           $relationship['contact_id'] = $dao->contact_a_id;
           $relationship['contact_name'] = $dao->contact_a_display_name;
           $relationship['contact_sort'] = $dao->contact_a_sort_name;
+          $relationship['label'] = $dao->label_b_a;
         }
 
         $relationship['url'] = CRM_Utils_System::url("civicrm/contact/view", 'reset=1&cid=' . $relationship['contact_id']);
