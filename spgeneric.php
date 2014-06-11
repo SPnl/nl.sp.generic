@@ -52,7 +52,6 @@ function spgeneric_civicrm_enable() {
   _spgeneric_static_group_value('Aan bestand toegevoegd', 2, 1);
   _spgeneric_static_group_value('Documenthistorie', 2, 1);
   _spgeneric_static_group_value('Cursus', 14, 1);
-  _spgeneric_contact_type("SP-Gemeente", "Gemeente van de SP", 1);
   _spgeneric_contact_type("SP-Afdeling", "Afdeling van de SP", 1);
   _spgeneric_contact_type("SP-Regio", "Regio van de SP", 1);
   _spgeneric_contact_type("SP-Provincie", "Provincie van de SP", 1);
@@ -142,13 +141,13 @@ function spgeneric_civicrm_enable() {
   _spgeneric_relationship_type(array(
 		'name_a_b' => 'sprel_gem_afdeling',
 		'name_b_a' => 'sprel_afdeling_gem',
-		'label_a_b' => 'is gemeente van',
-		'label_b_a' => 'heeft gemeente',
+		'label_a_b' => 'is fractie van',
+		'label_b_a' => 'heeft fractie',
 		'contact_type_a' => 'organization',
 		'contact_type_b' => 'organization',
-		'contact_sub_type_a' => 'SP_Gemeente',
+		'contact_sub_type_a' => 'SP_Fractie',
 		'contact_sub_type_b' => 'SP_Afdeling',
-		'description' => 'Relatie tussen SP-Afdeling en SP-Gemeente',
+		'description' => 'Relatie tussen SP-Afdeling en SP-Fractie',
 		'version' => 3
   ), 1);
   _spgeneric_relationship_type(array(
@@ -385,14 +384,14 @@ function spgeneric_civicrm_enable() {
 		'version' => 3
   ), 1);
   _spgeneric_relationship_type(array(
-		'name_a_b' => 'sprel_gemeenteraadslid_fractie',
-		'name_b_a' => 'sprel_fractie_gemeenteraadslid',
-		'label_a_b' => 'is gemeenteraadslid van',
-		'label_b_a' => 'heeft gemeenteraadslid',
+		'name_a_b' => 'sprel_fractieraadslid_fractie',
+		'name_b_a' => 'sprel_fractie_fractieraadslid',
+		'label_a_b' => 'is fractieraadslid van',
+		'label_b_a' => 'heeft fractieraadslid',
 		'contact_type_a' => 'individual',
 		'contact_type_b' => 'organization',
 		'contact_sub_type_b' => 'SP_Fractie',
-		'description' => 'Relatie tussen gemeenteraadslid en SP-Fractie',
+		'description' => 'Relatie tussen fractieraadslid en SP-Fractie',
 		'version' => 3
   ), 1);   
   _spgeneric_relationship_type(array(
@@ -608,7 +607,7 @@ function spgeneric_civicrm_disable() {
   _spgeneric_static_group_value('Aan bestand toegevoegd', 2, 0);
   _spgeneric_static_group_value('Documenthistorie', 2, 0);
   _spgeneric_static_group_value('Cursus', 14, 0);
-  _spgeneric_contact_type("SP-Gemeente", "Gemeente van de SP", 0);
+  _spgeneric_contact_type("SP-Fractie", "Fractie van de SP", 0);
   _spgeneric_contact_type("SP-Afdeling", "Afdeling van de SP", 0);
   _spgeneric_contact_type("SP-Regio", "Regio van de SP", 0);
   _spgeneric_contact_type("SP-Provincie", "Provincie van de SP", 0);
@@ -644,7 +643,7 @@ function spgeneric_civicrm_disable() {
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractievoorzitter_fractie','name_b_a' => 'sprel_fractie_fractievoorzitter','version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractievoorzitter_provincie','name_b_a' => 'sprel_provincie_fractievoorzitter','version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractievoorzitter_landelijk','name_b_a' => 'sprel_landelijk_fractievoorzitter','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gemeenteraadslid_fractie','name_b_a' => 'sprel_fractie_gemeenteraadslid','version' => 3), 0);   
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractieraadslid_fractie','name_b_a' => 'sprel_fractie_fractieraadslid','version' => 3), 0);   
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_deelraadslid_fractie','name_b_a' => 'sprel_fractie_deelraadslid','version' => 3), 0);  
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_wethouder_fractie','name_b_a' => 'sprel_fractie_wethouder','version' => 3), 0); 
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_statenlid_provincie','name_b_a' => 'sprel_provincie_statenlid','version' => 3), 0);
