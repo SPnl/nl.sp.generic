@@ -175,6 +175,7 @@ function spgeneric_civicrm_enable() {
 		'version' => 3
   ), 1);
   _spgeneric_relationship_type(array(
+<<<<<<< HEAD
 		'name_a_b' => 'sprel_voorzitter_afdeling',
 		'name_b_a' => 'sprel_afdeling_voorzitter',
 		'label_a_b' => 'is voorzitter van',
@@ -592,6 +593,18 @@ function spgeneric_civicrm_enable() {
 		'description' => 'Relatie tussen actief ROOD landelijk en SP-Landelijk',
 		'version' => 3
   ), 1);
+=======
+		'name_a_b' => 'sprel_gezinslid_a',
+		'name_b_a' => 'sprel_gezinslid_b',
+		'label_a_b' => 'is gezinslid van',
+		'label_b_a' => 'heeft gezinslid',
+		'contact_type_a' => 'Individual',
+		'contact_type_b' => 'Individual',
+		'description' => 'Relatie tussen gezinsleden',
+		'version' => 3
+  ), 1);
+  
+>>>>>>> f8d4ee4c0adf4228287ac449b3946537b6d676d7
   return _spgeneric_civix_civicrm_enable();
 }
 
@@ -621,6 +634,7 @@ function spgeneric_civicrm_disable() {
   _spgeneric_membership_type("Abonnee Tribune Gratis", array(), 0);
   _spgeneric_membership_type("Abonnee SPanning", array(), 0);
   _spgeneric_membership_type("Abonnee SPeciaal", array(), 0);
+<<<<<<< HEAD
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_gem_afdeling','name_b_a' => 'sprel_afdeling_gem','version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_afdeling_regio','name_b_a' => 'sprel_regio_afdeling','version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_regio_provincie','name_b_a' => 'sprel_provincie_regio','version' => 3), 0);
@@ -662,6 +676,12 @@ function spgeneric_civicrm_disable() {
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_lidvteam_landelijk','name_b_a' => 'sprel_landelijk_lidvteam','version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_bestuurslidrood_landelijk','name_b_a' => 'sprel_landelijk_bestuurslidrood','version' => 3), 0);
   _spgeneric_relationship_type(array('name_a_b' => 'sprel_actiefroodlandelijk_landelijk', 'name_b_a' => 'sprel_landelijk_actiefroodlandelijk','version' => 3), 0);
+=======
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gem_afdeling', 'name_b_a' => 'sprel_afdeling_gem', 'version' => 3), 0);
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_afdeling_regio', 'name_b_a' => 'sprel_regio_afdeling', 'version' => 3), 0);
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_regio_provincie', 'name_b_a' => 'sprel_provincie_regio', 'version' => 3), 0);
+  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gezinslid_a', 'name_b_a' => 'sprel_gezinslid_b', 'version' => 3), 0);
+>>>>>>> f8d4ee4c0adf4228287ac449b3946537b6d676d7
   return _spgeneric_civix_civicrm_disable();
 }
 
@@ -773,4 +793,18 @@ function spgeneric_civicrm_caseTypes(&$caseTypes) {
  */
 function spgeneric_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
   _spgeneric_civix_civicrm_alterSettingsFolders($metaDataFolders);
+}
+
+/**
+ * 
+ * Implementation of hook_civicrm_buildForm
+ *
+ * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_buildForm
+ */
+function spgeneric_civicrm_buildForm($formName, &$form) {
+ if ($formName == 'CRM_Member_Form_Membership') {
+   //add template 
+   $toonGezinsleden = new CRM_Spgeneric_Buildform_ToonGezinsleden($form);
+   $toonGezinsleden->parse();
+ } 
 }
