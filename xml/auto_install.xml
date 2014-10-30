@@ -10,7 +10,7 @@
       <collapse_display>1</collapse_display>
       <help_pre></help_pre>
       <help_post></help_post>
-      <weight>2</weight>
+      <weight>3</weight>
       <is_active>1</is_active>
       <table_name>civicrm_value_migratie_3</table_name>
       <is_multiple>0</is_multiple>
@@ -26,7 +26,7 @@
       <collapse_display>1</collapse_display>
       <help_pre></help_pre>
       <help_post></help_post>
-      <weight>3</weight>
+      <weight>2</weight>
       <is_active>1</is_active>
       <table_name>civicrm_value_migratie_lidmaatschappen_5</table_name>
       <is_multiple>0</is_multiple>
@@ -35,19 +35,19 @@
       <is_reserved>0</is_reserved>
     </CustomGroup>
     <CustomGroup>
-      <name>Adressen</name>
-      <title>Adressen</title>
-      <extends>Address</extends>
+      <name>Welkomstcadeau</name>
+      <title>Welkomstcadeau</title>
+      <extends>Membership</extends>
       <style>Inline</style>
       <collapse_display>1</collapse_display>
       <help_pre></help_pre>
       <help_post></help_post>
-      <weight>4</weight>
+      <weight>1</weight>
       <is_active>1</is_active>
-      <table_name>civicrm_value_adressen_5</table_name>
+      <table_name>civicrm_value_welkomstcadeau_sp_5</table_name>
       <is_multiple>0</is_multiple>
       <collapse_adv_display>0</collapse_adv_display>
-      <created_date>2014-05-23 12:11:26</created_date>
+      <created_date>2014-07-08 10:06:10</created_date>
       <is_reserved>0</is_reserved>
     </CustomGroup>
   </CustomGroups>
@@ -60,7 +60,7 @@
       <is_required>0</is_required>
       <is_searchable>0</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>6</weight>
+      <weight>20</weight>
       <is_active>1</is_active>
       <is_view>0</is_view>
       <text_length>255</text_length>
@@ -68,6 +68,42 @@
       <note_rows>4</note_rows>
       <column_name>bron_7</column_name>
       <option_group_name>bron_20140408105127</option_group_name>
+      <custom_group_name>Migratie_Contacten</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Voorletters</name>
+      <label>Voorletters</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>21</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>voorletters_14</column_name>
+      <custom_group_name>Migratie_Contacten</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Retourpost</name>
+      <label>Retourpost</label>
+      <data_type>String</data_type>
+      <html_type>Radio</html_type>
+      <default_value>0</default_value>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>22</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>retourpost_15</column_name>
+      <option_group_name>retourpost_20140703093210</option_group_name>
       <custom_group_name>Migratie_Contacten</custom_group_name>
     </CustomField>
     <CustomField>
@@ -89,74 +125,91 @@
       <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
     </CustomField>
     <CustomField>
-      <name>Betaalmethode</name>
-      <label>Betaalmethode</label>
-      <data_type>String</data_type>
-      <html_type>Select</html_type>
-      <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>5</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>40</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>betaalmethode_3</column_name>
-      <option_group_name>betaalmethode_20140422102845</option_group_name>
-      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
-    </CustomField>
-    <CustomField>
-      <name>BIC</name>
-      <label>BIC</label>
+      <name>Gezinslid</name>
+      <label>Gezinslid</label>
       <data_type>String</data_type>
       <html_type>Text</html_type>
       <is_required>0</is_required>
       <is_searchable>0</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>3</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>30</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>bic_4</column_name>
-      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
-    </CustomField>
-    <CustomField>
-      <name>IBAN</name>
-      <label>IBAN</label>
-      <data_type>String</data_type>
-      <html_type>Text</html_type>
-      <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>4</weight>
+      <weight>10</weight>
       <is_active>1</is_active>
       <is_view>0</is_view>
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
-      <column_name>iban_5</column_name>
+      <column_name>gezinslid_11</column_name>
       <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
     </CustomField>
     <CustomField>
-      <name>Retourpost</name>
-      <label>Retourpost</label>
+      <name>Reden</name>
+      <label>Reden</label>
+      <data_type>String</data_type>
+      <html_type>CheckBox</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>17</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>reden_16</column_name>
+      <option_group_name>reden_20140708100319</option_group_name>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Reden_opzegging</name>
+      <label>Reden opzegging</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>18</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>reden_opzegging_17</column_name>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Cadeau</name>
+      <label>Cadeau</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>12</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>type_25</column_name>
+      <custom_group_name>Welkomstcadeau</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Heeft_cadeau_gehad</name>
+      <label>Heeft cadeau gehad</label>
       <data_type>String</data_type>
       <html_type>Radio</html_type>
       <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
+      <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>1</weight>
+      <weight>9</weight>
       <is_active>1</is_active>
       <is_view>0</is_view>
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
-      <column_name>retourpost_13</column_name>
-      <option_group_name>retourpost_20140523122100</option_group_name>
-      <custom_group_name>Adressen</custom_group_name>
+      <column_name>heeft_cadeau_gehad_26</column_name>
+      <option_group_name>heeft_cadeau_gehad_20140708114726</option_group_name>
+      <custom_group_name>Welkomstcadeau</custom_group_name>
     </CustomField>
   </CustomFields>
   <OptionGroups>
@@ -167,14 +220,20 @@
       <is_active>1</is_active>
     </OptionGroup>
     <OptionGroup>
-      <name>betaalmethode_20140422102845</name>
-      <title>Betaalmethode</title>
+      <name>retourpost_20140703093210</name>
+      <title>Retourpost</title>
       <is_reserved>1</is_reserved>
       <is_active>1</is_active>
     </OptionGroup>
     <OptionGroup>
-      <name>retourpost_20140523122100</name>
-      <title>Retourpost</title>
+      <name>reden_20140708100319</name>
+      <title>Reden</title>
+      <is_reserved>1</is_reserved>
+      <is_active>1</is_active>
+    </OptionGroup>
+    <OptionGroup>
+      <name>heeft_cadeau_gehad_20140708114726</name>
+      <title>Heeft cadeau gehad</title>
       <is_reserved>1</is_reserved>
       <is_active>1</is_active>
     </OptionGroup>
@@ -379,59 +438,92 @@
       <option_group_name>bron_20140408105127</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Automatische incasso</label>
-      <value>Automatische incasso</value>
-      <name>Automatische_incasso</name>
+      <label>Nee</label>
+      <value>0</value>
+      <name>Nee</name>
       <is_default>0</is_default>
       <weight>1</weight>
       <is_optgroup>0</is_optgroup>
       <is_reserved>0</is_reserved>
       <is_active>1</is_active>
-      <option_group_name>betaalmethode_20140422102845</option_group_name>
+      <option_group_name>retourpost_20140703093210</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Acceptgiro</label>
-      <value>Acceptgiro</value>
-      <name>Acceptgiro</name>
-      <is_default>0</is_default>
-      <weight>2</weight>
-      <is_optgroup>0</is_optgroup>
-      <is_reserved>0</is_reserved>
-      <is_active>1</is_active>
-      <option_group_name>betaalmethode_20140422102845</option_group_name>
-    </OptionValue>
-    <OptionValue>
-      <label>Periodieke overboeking</label>
-      <value>Periodieke overboeking</value>
-      <name>Periodieke_overboeking</name>
+      <label>Ja</label>
+      <value>2</value>
+      <name>Ja</name>
       <is_default>0</is_default>
       <weight>3</weight>
       <is_optgroup>0</is_optgroup>
       <is_reserved>0</is_reserved>
       <is_active>1</is_active>
-      <option_group_name>betaalmethode_20140422102845</option_group_name>
+      <option_group_name>retourpost_20140703093210</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Ja met reden</label>
+      <value>1</value>
+      <name>Ja_met_reden</name>
+      <is_default>0</is_default>
+      <weight>2</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>retourpost_20140703093210</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Politiek</label>
+      <value>1</value>
+      <name>Politiek</name>
+      <is_default>0</is_default>
+      <weight>1</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>reden_20140708100319</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Financieel</label>
+      <value>2</value>
+      <name>Financieel</name>
+      <is_default>0</is_default>
+      <weight>2</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>reden_20140708100319</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Overig</label>
+      <value>3</value>
+      <name>Overig</name>
+      <is_default>0</is_default>
+      <weight>3</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>reden_20140708100319</option_group_name>
     </OptionValue>
     <OptionValue>
       <label>Ja</label>
-      <value>Ja</value>
+      <value>1</value>
       <name>Ja</name>
       <is_default>0</is_default>
       <weight>1</weight>
       <is_optgroup>0</is_optgroup>
       <is_reserved>0</is_reserved>
       <is_active>1</is_active>
-      <option_group_name>retourpost_20140523122100</option_group_name>
+      <option_group_name>heeft_cadeau_gehad_20140708114726</option_group_name>
     </OptionValue>
     <OptionValue>
       <label>Nee</label>
-      <value>Nee</value>
+      <value>0</value>
       <name>Nee</name>
       <is_default>0</is_default>
       <weight>2</weight>
       <is_optgroup>0</is_optgroup>
       <is_reserved>0</is_reserved>
       <is_active>1</is_active>
-      <option_group_name>retourpost_20140523122100</option_group_name>
+      <option_group_name>heeft_cadeau_gehad_20140708114726</option_group_name>
     </OptionValue>
   </OptionValues>
 </CustomData>
