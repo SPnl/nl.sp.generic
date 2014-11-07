@@ -873,11 +873,9 @@ function spgeneric_civicrm_alterSettingsFolders(&$metaDataFolders = NULL) {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_buildForm
  */
 function spgeneric_civicrm_buildForm($formName, &$form) {
- /*
  if ($formName == 'CRM_Member_Form_Membership') {
    //add template 
    $toonGezinsleden = new CRM_Spgeneric_Buildform_ToonGezinsleden($form);
    $toonGezinsleden->parse();
  }
- */
 }
