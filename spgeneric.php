@@ -46,12 +46,23 @@ function spgeneric_civicrm_uninstall() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_enable
  */
 function spgeneric_civicrm_enable() {
-  
+  _spgeneric_create_contact(1, "SPNL", "O");
+  _spgeneric_create_contact(4, "ROOD", "O");
+  _spgeneric_create_contact(6, "Beheerder SP", "I");
+  _spgeneric_create_contact(7, "Website Koppeling Contacten", "I");
   _spgeneric_location_type('Bezoekadres', 1);
   _spgeneric_location_type('Tribuneadres', 1);
+  _spgeneric_tag("Geroyeerd", 1);
+  _spgeneric_tag("Geschorst", 1);
+  _spgeneric_tag("Geweigerd", 1);
   _spgeneric_static_group_value('Postvak', 1, 1);
   _spgeneric_static_group_value('Aan bestand toegevoegd', 2, 1);
   _spgeneric_static_group_value('Documenthistorie', 2, 1);
+  _spgeneric_static_group_value('Aanmelding via website', 2, 1);
+  _spgeneric_static_group_value('Wijziging adres via website', 2, 1);
+  _spgeneric_static_group_value('Opzegging via website', 2, 1);
+  _spgeneric_static_group_value('Financiële wijziging via website', 2, 1);
+  _spgeneric_static_group_value('Wijziging interesses via website', 2, 1);
   _spgeneric_static_group_value('Cursus', 14, 1);
   _spgeneric_static_group_value('Regioconferentie', 14, 1);
   _spgeneric_static_group_value('Nieuwe Ledendag', 14, 1);
@@ -68,8 +79,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -78,8 +95,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -88,8 +111,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -98,18 +127,30 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'minimum_fee' => '5.00',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
   , 1);  
   _spgeneric_membership_type("Abonnee Blad-Tribune Proef", array(
 		'domain_id' => 1,
-		'member_of_contact_id' => 1,
-		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
-		'duration_interval' => 1,
+		'member_of_contact_id' => '1',
+		'financial_type_id' => '2',
+		'minimum_fee' => '13.00',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'rolling',
+		'visibility' => 'Public',
+		'weight' => '1',
+		'is_active' => '1',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -117,9 +158,14 @@ function spgeneric_civicrm_enable() {
   _spgeneric_membership_type("Abonnee Blad-Tribune Gratis", array(
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
-		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -128,18 +174,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
-		'is_active' => 1,
-		'version' => 3
-	)
-  , 1);  
-  _spgeneric_membership_type("Abonnee Audio-Tribune Proef", array(
-		'domain_id' => 1,
-		'member_of_contact_id' => 1,
-		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
-		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -148,8 +190,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -158,8 +206,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -168,8 +222,15 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'minimum_fee' => '3.25',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -178,8 +239,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -188,8 +255,14 @@ function spgeneric_civicrm_enable() {
 		'domain_id' => 1,
 		'member_of_contact_id' => 1,
 		'financial_type_id' => 2,
-		'duration_unit' => 'lifetime',
+		'duration_unit' => 'year',
+		'duration_interval' => '1',
+		'period_type' => 'fixed',
+		'fixed_period_start_day' => '101',
+		'fixed_period_rollover_day' => '1001',
 		'duration_interval' => 1,
+		'auto_renew' => 2,
+		'visibility' => 'Public',
 		'is_active' => 1,
 		'version' => 3
 	)
@@ -671,6 +744,7 @@ function spgeneric_civicrm_enable() {
 		'description' => 'Relatie tussen gezinsleden',
 		'version' => 3
   ), 1);
+  
   return _spgeneric_civix_civicrm_enable();
 }
 
@@ -680,80 +754,30 @@ function spgeneric_civicrm_enable() {
  * @link http://wiki.civicrm.org/confluence/display/CRMDOC/hook_civicrm_disable
  */
 function spgeneric_civicrm_disable() {
-  
-  _spgeneric_location_type('Bezoekadres', 0);
-  _spgeneric_location_type('Tribuneadres', 0);
-  _spgeneric_static_group_value('Postvak', 1, 0);
-  _spgeneric_static_group_value('Aan bestand toegevoegd', 2, 0);
-  _spgeneric_static_group_value('Documenthistorie', 2, 0);
-  _spgeneric_static_group_value('Cursus', 14, 0);
-  _spgeneric_static_group_value('Regioconferentie', 14, 0);
-  _spgeneric_static_group_value('Nieuwe Ledendag', 14, 0);
-  _spgeneric_static_group_value('Automatische Incasso', 10, 0);
-  _spgeneric_static_group_value('Accept-giro', 10, 0);
-  _spgeneric_static_group_value('Periodieke overboeking', 10, 0);
-  _spgeneric_contact_type("SP-Fractie", "Fractie van de SP", 0);
-  _spgeneric_contact_type("SP-Werkgroep", "Werkgroep van de SP", 0);
-  _spgeneric_contact_type("SP-Afdeling", "Afdeling van de SP", 0);
-  _spgeneric_contact_type("SP-Regio", "Regio van de SP", 0);
-  _spgeneric_contact_type("SP-Provincie", "Provincie van de SP", 0);
-  _spgeneric_contact_type("SP-Landelijk", "Landelijk van de SP", 0);
-  _spgeneric_membership_type("Lid SP", array(), 0);
-  _spgeneric_membership_type("Lid ROOD", array(), 0);
-  _spgeneric_membership_type("Lid SP en ROOD", array(), 0);
-  _spgeneric_membership_type("Abonnee Tribune Betaald", array(), 0);
-  _spgeneric_membership_type("Abonnee Tribune Proef", array(), 0);
-  _spgeneric_membership_type("Abonnee Tribune Gratis", array(), 0);
-  _spgeneric_membership_type("Abonnee SPanning", array(), 0);
-  _spgeneric_membership_type("Abonnee SPeciaal", array(), 0);
-  _spgeneric_membership_type("SP-Donateur", array(), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractie_afdeling','name_b_a' => 'sprel_afdeling_fractie','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_afdeling_regio','name_b_a' => 'sprel_regio_afdeling','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_afdelingio_regio','name_b_a' => 'sprel_regio_afdelingio','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_regio_provincie','name_b_a' => 'sprel_provincie_regio','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_voorzitter_afdeling','name_b_a' => 'sprel_afdeling_voorzitter','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_vervangendvoorzitter_afdeling', 'name_b_a' => 'sprel_afdeling_vervangendvoorzitter', 'version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_organisatiesecretaris_afdeling','name_b_a' => 'sprel_afdeling_organisatiesecretaris','version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_penningmeester_afdeling','name_b_a' => 'sprel_afdeling_penningmeester','version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_bestuurslid_afdeling','name_b_a' => 'sprel_afdeling_bestuurslid','version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_kaderlid_afdeling','name_b_a' => 'sprel_afdeling_kaderlid','version' => 3), 0); 
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_ROOD_Contactpersoon_afdeling','name_b_a' => 'sprel_afdeling_ROOD_Contactpersoon','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_scholingsverantwoordelijke_afdeling','name_b_a' => 'sprel_afdeling_scholingsverantwoordelijke','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_opnaartweehonderd_afdeling','name_b_a' => 'sprel_afdeling_opnaartweehonderd','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_webmaster_afdeling','name_b_a' => 'sprel_afdeling_webmaster','version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_hulpdienstmedewerker_afdeling','name_b_a' => 'sprel_afdeling_hulpdienstmedewerker','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_verantwoordelijke_ledenadministratie_afdeling','name_b_a' => 'sprel_afdeling_verantwoordelijke_ledenadministratie','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_bestelpersoon_afdeling','name_b_a' => 'sprel_afdeling_bestelpersoon','version' => 3), 0); 
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_bestelpersoon_provincie','name_b_a' => 'sprel_provincie_bestelpersoon','version' => 3), 0); 
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_bestelpersoon_landelijk','name_b_a' => 'sprel_landelijk_bestelpersoon','version' => 3), 0); 
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractievoorzitter_afdeling','name_b_a' => 'sprel_afdeling_fractievoorzitter','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractievoorzitter_provincie','name_b_a' => 'sprel_provincie_fractievoorzitter','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractievoorzitter_landelijk','name_b_a' => 'sprel_landelijk_fractievoorzitter','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_fractieraadslid_afdeling','name_b_a' => 'sprel_afdeling_fractieraadslid','version' => 3), 0);   
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_deelraadslid_afdeling','name_b_a' => 'sprel_afdeling_deelraadslid','version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_wethouder_afdeling','name_b_a' => 'sprel_afdeling_wethouder','version' => 3), 0); 
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_statenlid_provincie','name_b_a' => 'sprel_provincie_statenlid','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gedeputeerde_provincie','name_b_a' => 'sprel_provincie_gedeputeerde','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_tweede_kamerlid_landelijk','name_b_a' => 'sprel_landelijk_tweede_kamerlid','version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_eerste_kamerlid_landelijk','name_b_a' => 'sprel_landelijk_eerste_kamerlid','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_europarlementarier_landelijk','name_b_a' => 'sprel_landelijk_europarlementarier','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_partijbestuurslid_landelijk','name_b_a' => 'sprel_landelijk_partijbestuurslid','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_liddagelijksbestuur_landelijk','name_b_a' => 'sprel_landelijk_liddagelijksbestuur','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_regiobestuurder_landelijk','name_b_a' => 'sprel_landelijk_regiobestuurder','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_personeelslid_amersfoort_landelijk','name_b_a' => 'sprel_landelijk_personeelslid_amersfoort','version' => 3), 0);  
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_personeelslid_denhaag_landelijk','name_b_a' => 'sprel_landelijk_personeelslid_denhaag','version' => 3), 0); 
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_personeelslid_brussel_landelijk','name_b_a' => 'sprel_landelijk_personeelslid_brussel','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_lidberoepscomissie_landelijk','name_b_a' => 'sprel_landelijk_lidberoepscomissie','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_lidfinancielecontrolecomissie_landelijk','name_b_a' => 'sprel_landelijk_lidfinancielecontrolecomissie','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_lidvteam_landelijk','name_b_a' => 'sprel_landelijk_lidvteam','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_bestuurslidrood_landelijk','name_b_a' => 'sprel_landelijk_bestuurslidrood','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_actiefroodlandelijk_landelijk', 'name_b_a' => 'sprel_landelijk_actiefroodlandelijk','version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gem_afdeling', 'name_b_a' => 'sprel_afdeling_gem', 'version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_afdeling_regio', 'name_b_a' => 'sprel_regio_afdeling', 'version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_regio_provincie', 'name_b_a' => 'sprel_provincie_regio', 'version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_provincie_landelijk', 'name_b_a' => 'sprel_landelijk_provincie', 'version' => 3), 0);
-  _spgeneric_relationship_type(array('name_a_b' => 'sprel_gezinslid_a', 'name_b_a' => 'sprel_gezinslid_b', 'version' => 3), 0);
   return _spgeneric_civix_civicrm_disable();
+}
+
+function _spgeneric_create_contact($id, $name, $type) {
+	try {
+		if($id > 1) CRM_Core_DAO::executeQuery("INSERT INTO `civicrm_contact` SET `id` = ".$id);
+		if($type == "O") {
+			$_contactParams = array(
+				"id" => $id,
+				"contact_type" => "organization",
+				"organization_name" => $name
+			);
+		} else {
+			$_contactParams = array(
+				"id" => $id,
+				"contact_type" => "individual",
+				"first_name" => $name,
+				"display_name" => $name
+			);
+		}
+		civicrm_api3('Contact','Create',$_contactParams);
+	} catch (Exception $e) {
+		die ($e);
+	}
 }
 
 function _spgeneric_location_type($name, $enabled) {
@@ -775,6 +799,17 @@ function _spgeneric_static_group_value($label, $ogIdentifier, $enabled) {
 		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'label' => $label, 'option_group_id' => $ogIdentifier, 'is_active' => $enabled));
 	} else if(isset($ogvExists['id'])) {
 		$result = civicrm_api('OptionValue', 'create', array('version' => 3, 'id' => $ogvExists['id'], 'is_active' => $enabled));
+	}
+	
+}
+
+function _spgeneric_tag($name, $enabled) {
+	
+	$tagExists = civicrm_api('Tag', 'getsingle', array('version' => 3, 'name' => $name));
+	if(!isset($tagExists['id']) && $enabled) {
+		$result = civicrm_api('Tag', 'create', array('version' => 3, 'name' => $name, 'is_active' => $enabled));
+	} else if(isset($tagExists['id'])) {
+		$result = civicrm_api('Tag', 'create', array('version' => 3, 'id' => $tagExists['id'], 'is_active' => $enabled));
 	}
 	
 }
