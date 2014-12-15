@@ -34,7 +34,7 @@
       <created_date>0000-00-00 00:00:00</created_date>
       <is_reserved>0</is_reserved>
     </CustomGroup>
-	<CustomGroup>
+    <CustomGroup>
       <name>Welkomstcadeau_SP_Lid</name>
       <title>Welkomstcadeau SP-lid</title>
       <extends>Membership</extends>
@@ -49,8 +49,8 @@
       <collapse_adv_display>0</collapse_adv_display>
       <created_date>0000-00-00 00:00:00</created_date>
       <is_reserved>0</is_reserved>
-    </CustomGroup>	
-	<CustomGroup>
+    </CustomGroup>
+    <CustomGroup>
       <name>Welkomstcadeau_ROOD_Lid</name>
       <title>Welkomstcadeau ROOD-lid</title>
       <extends>Membership</extends>
@@ -67,8 +67,8 @@
       <is_reserved>0</is_reserved>
     </CustomGroup>
     <CustomGroup>
-      <name>Status_Ledenpakket</name>
-      <title>Status Ledenpakket</title>
+      <name>Welkomstbrief</name>
+      <title>Welkomstbrief</title>
       <extends>Membership</extends>
       <style>Inline</style>
       <collapse_display>1</collapse_display>
@@ -76,21 +76,21 @@
       <help_post></help_post>
       <weight>5</weight>
       <is_active>1</is_active>
-      <table_name>civicrm_value_status_ledenpakket_5</table_name>
+      <table_name>civicrm_value_welkomstbrief_5</table_name>
       <is_multiple>0</is_multiple>
       <collapse_adv_display>0</collapse_adv_display>
-      <created_date>0000-00-00 00:00:00</created_date>
+      <created_date>2014-12-08 13:12:44</created_date>
       <is_reserved>0</is_reserved>
     </CustomGroup>
   </CustomGroups>
   <CustomFields>
-	<CustomField>
+    <CustomField>
       <name>Voorletters</name>
       <label>Voorletters</label>
       <data_type>String</data_type>
       <html_type>Text</html_type>
       <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
+      <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
       <weight>1</weight>
       <is_active>1</is_active>
@@ -99,6 +99,7 @@
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
       <column_name>voorletters_1</column_name>
+      <in_selector>0</in_selector>
       <custom_group_name>Migratie_Contacten</custom_group_name>
     </CustomField>
     <CustomField>
@@ -107,15 +108,16 @@
       <data_type>String</data_type>
       <html_type>Select</html_type>
       <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
+      <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>2</weight>
+      <weight>4</weight>
       <is_active>1</is_active>
       <is_view>0</is_view>
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
       <column_name>bron_2</column_name>
+      <in_selector>0</in_selector>
       <option_group_name>bron_20140408105127</option_group_name>
       <custom_group_name>Migratie_Contacten</custom_group_name>
     </CustomField>
@@ -126,15 +128,16 @@
       <html_type>Radio</html_type>
       <default_value>0</default_value>
       <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
+      <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>3</weight>
+      <weight>6</weight>
       <is_active>1</is_active>
       <is_view>0</is_view>
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
       <column_name>retourpost_3</column_name>
+      <in_selector>0</in_selector>
       <option_group_name>retourpost_20140703093210</option_group_name>
       <custom_group_name>Migratie_Contacten</custom_group_name>
     </CustomField>
@@ -144,15 +147,16 @@
       <data_type>String</data_type>
       <html_type>Select</html_type>
       <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
+      <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>4</weight>
+      <weight>8</weight>
       <is_active>1</is_active>
       <is_view>0</is_view>
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
       <column_name>bron_4</column_name>
+      <in_selector>0</in_selector>
       <option_group_name>bron_20140408105127</option_group_name>
       <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
     </CustomField>
@@ -162,92 +166,6 @@
       <data_type>String</data_type>
       <html_type>Text</html_type>
       <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>5</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>255</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>gezinslid_5</column_name>
-      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
-    </CustomField>
-    <CustomField>
-      <name>Reden</name>
-      <label>Reden</label>
-      <data_type>String</data_type>
-      <html_type>Text</html_type>
-      <is_required>0</is_required>
-      <is_searchable>1</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>6</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>255</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>reden_opzegging_6</column_name>
-      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
-    </CustomField>
-    <CustomField>
-      <name>Cadeau</name>
-      <label>Cadeau</label>
-      <data_type>String</data_type>
-      <html_type>Text</html_type>
-      <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>7</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>255</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>cadeau_7</column_name>
-      <custom_group_name>Welkomstcadeau_SP_Lid</custom_group_name>
-    </CustomField>
-    <CustomField>
-      <name>Heeft_cadeau_gehad</name>
-      <label>Heeft cadeau gehad</label>
-      <data_type>String</data_type>
-      <html_type>Radio</html_type>
-      <is_required>0</is_required>
-      <is_searchable>1</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>8</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>255</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>heeft_cadeau_gehad_8</column_name>
-      <option_group_name>heeft_cadeau_gehad_20140708114726</option_group_name>
-      <custom_group_name>Welkomstcadeau_SP_Lid</custom_group_name>
-    </CustomField>
-	<CustomField>
-      <name>Cadeau</name>
-      <label>Cadeau</label>
-      <data_type>String</data_type>
-      <html_type>Text</html_type>
-      <is_required>0</is_required>
-      <is_searchable>0</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>9</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>255</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>cadeau_9</column_name>
-      <custom_group_name>Welkomstcadeau_ROOD_Lid</custom_group_name>
-    </CustomField>
-    <CustomField>
-      <name>Heeft_cadeau_gehad</name>
-      <label>Heeft cadeau gehad</label>
-      <data_type>String</data_type>
-      <html_type>Radio</html_type>
-      <is_required>0</is_required>
       <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
       <weight>10</weight>
@@ -256,11 +174,177 @@
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
-      <column_name>heeft_cadeau_gehad_10</column_name>
+      <column_name>gezinslid_5</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Reden</name>
+      <label>Opzegreden</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>13</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>reden_6</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Opzegwijze</name>
+      <label>Opzegwijze</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>12</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>opzegwijze_12</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Gepersonaliseerde_brief</name>
+      <label>Gepersonaliseerde brief</label>
+      <data_type>Boolean</data_type>
+      <html_type>Radio</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>14</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>gepersonaliseerde_brief_13</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Migratie_Lidmaatschappen</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Cadeau</name>
+      <label>Cadeau</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>16</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>cadeau_8</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Welkomstcadeau_SP_Lid</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Heeft_cadeau_gehad</name>
+      <label>Heeft cadeau gehad</label>
+      <data_type>String</data_type>
+      <html_type>Radio</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>17</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>heeft_cadeau_gehad_9</column_name>
+      <in_selector>0</in_selector>
+      <option_group_name>heeft_cadeau_gehad_20140708114726</option_group_name>
+      <custom_group_name>Welkomstcadeau_SP_Lid</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Datum</name>
+      <label>Datum</label>
+      <data_type>Date</data_type>
+      <html_type>Select Date</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>18</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <date_format>mm/dd/yy</date_format>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>datum_14</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Welkomstcadeau_SP_Lid</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Cadeau</name>
+      <label>Cadeau</label>
+      <data_type>String</data_type>
+      <html_type>Text</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>18</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>cadeau_10</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Welkomstcadeau_ROOD_Lid</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Heeft_cadeau_gehad</name>
+      <label>Heeft cadeau gehad</label>
+      <data_type>String</data_type>
+      <html_type>Radio</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>19</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>heeft_cadeau_gehad_11</column_name>
+      <in_selector>0</in_selector>
       <option_group_name>heeft_cadeau_gehad_20140708114726</option_group_name>
       <custom_group_name>Welkomstcadeau_ROOD_Lid</custom_group_name>
     </CustomField>
-	<CustomField>
+    <CustomField>
+      <name>Datum</name>
+      <label>Datum</label>
+      <data_type>Date</data_type>
+      <html_type>Select Date</html_type>
+      <is_required>0</is_required>
+      <is_searchable>0</is_searchable>
+      <is_search_range>0</is_search_range>
+      <weight>20</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <date_format>mm/dd/yy</date_format>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>datum_15</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Welkomstcadeau_ROOD_Lid</custom_group_name>
+    </CustomField>
+    <CustomField>
       <name>Verzonden</name>
       <label>Verzonden</label>
       <data_type>Boolean</data_type>
@@ -268,15 +352,34 @@
       <is_required>0</is_required>
       <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
-      <weight>11</weight>
+      <weight>1</weight>
       <is_active>1</is_active>
       <is_view>0</is_view>
       <text_length>255</text_length>
       <note_columns>60</note_columns>
       <note_rows>4</note_rows>
-	  <default_value>0</default_value>
-      <column_name>verzonden_11</column_name>
-      <custom_group_name>Status_Ledenpakket</custom_group_name>
+      <column_name>verzonden_16</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Welkomstbrief</custom_group_name>
+    </CustomField>
+    <CustomField>
+      <name>Datum</name>
+      <label>Datum</label>
+      <data_type>Date</data_type>
+      <html_type>Select Date</html_type>
+      <is_required>0</is_required>
+      <is_searchable>1</is_searchable>
+      <is_search_range>1</is_search_range>
+      <weight>2</weight>
+      <is_active>1</is_active>
+      <is_view>0</is_view>
+      <text_length>255</text_length>
+      <date_format>mm/dd/yy</date_format>
+      <note_columns>60</note_columns>
+      <note_rows>4</note_rows>
+      <column_name>datum_17</column_name>
+      <in_selector>0</in_selector>
+      <custom_group_name>Welkomstbrief</custom_group_name>
     </CustomField>
   </CustomFields>
   <OptionGroups>
@@ -289,12 +392,6 @@
     <OptionGroup>
       <name>retourpost_20140703093210</name>
       <title>Retourpost</title>
-      <is_reserved>1</is_reserved>
-      <is_active>1</is_active>
-    </OptionGroup>
-    <OptionGroup>
-      <name>reden_20140708100319</name>
-      <title>Reden</title>
       <is_reserved>1</is_reserved>
       <is_active>1</is_active>
     </OptionGroup>
