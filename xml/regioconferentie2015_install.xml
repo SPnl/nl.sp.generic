@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<CustomData>
+    <CustomGroups>
+        <CustomGroup>
+            <name>regioconf_options</name>
+            <title>Inschrijving regioconferentie</title>
+            <extends>Event</extends>
+            <extends_entity_column_value_option_group>event_type</extends_entity_column_value_option_group>
+            <extends_entity_column_value>Regioconferentie</extends_entity_column_value>
+            <style>Inline</style>
+            <collapse_display>0</collapse_display>
+            <help_pre></help_pre>
+            <help_post></help_post>
+            <weight>25</weight>
+            <is_active>1</is_active>
+            <table_name>civicrm_value_regioconf_options_49</table_name>
+            <is_multiple>0</is_multiple>
+            <collapse_adv_display>0</collapse_adv_display>
+            <created_date>2015-03-26 16:38:11</created_date>
+            <is_reserved>0</is_reserved>
+        </CustomGroup>
+    </CustomGroups>
+    <CustomFields>
+        <CustomField>
+            <name>regioconf_regios_toegang</name>
+            <label>Toegankelijk voor SP-regio's</label>
+            <data_type>String</data_type>
+            <html_type>AdvMulti-Select</html_type>
+            <is_required>0</is_required>
+            <is_searchable>0</is_searchable>
+            <is_search_range>0</is_search_range>
+            <weight>20</weight>
+            <help_post>Als hier een of meer regio's gekozen worden, kunnen alleen afdelingen in deze
+                regio's deelnemers aanmelden voor dit evenement.
+            </help_post>
+            <is_active>1</is_active>
+            <is_view>0</is_view>
+            <text_length>255</text_length>
+            <note_columns>60</note_columns>
+            <note_rows>4</note_rows>
+            <column_name>regios_toegang</column_name>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+            <custom_group_name>regioconf_options</custom_group_name>
+        </CustomField>
+        <CustomField>
+            <name>regioconf_aantal_gasten</name>
+            <label>Aantal gasten per afdeling</label>
+            <data_type>Int</data_type>
+            <html_type>Text</html_type>
+            <default_value>0</default_value>
+            <is_required>0</is_required>
+            <is_searchable>0</is_searchable>
+            <is_search_range>0</is_search_range>
+            <weight>22</weight>
+            <help_post>Afdelingen kunnen X gasten aanmelden voor dit evenement. (0 = optie wordt niet getoond)
+            </help_post>
+            <is_active>1</is_active>
+            <is_view>0</is_view>
+            <text_length>255</text_length>
+            <note_columns>60</note_columns>
+            <note_rows>4</note_rows>
+            <column_name>aantal_gasten</column_name>
+            <custom_group_name>regioconf_options</custom_group_name>
+        </CustomField>
+        <CustomField>
+            <name>regioconf_ratio</name>
+            <label>Verhouding aantal leden/aantal inschrijvingen</label>
+            <data_type>Int</data_type>
+            <html_type>Text</html_type>
+            <default_value>50</default_value>
+            <is_required>0</is_required>
+            <is_searchable>0</is_searchable>
+            <is_search_range>0</is_search_range>
+            <weight>19</weight>
+            <help_post>Een afdeling mag 1 deelnemer inschrijven per X leden. (0 = onbeperkt)</help_post>
+            <is_active>1</is_active>
+            <is_view>0</is_view>
+            <text_length>255</text_length>
+            <note_columns>60</note_columns>
+            <note_rows>4</note_rows>
+            <column_name>regioconf_ratio</column_name>
+            <custom_group_name>regioconf_options</custom_group_name>
+        </CustomField>
+        <CustomField>
+            <name>regioconf_registration_until</name>
+            <label>Inschrijven tot x dagen van tevoren</label>
+            <data_type>Int</data_type>
+            <html_type>Text</html_type>
+            <default_value>7</default_value>
+            <is_required>0</is_required>
+            <is_searchable>0</is_searchable>
+            <is_search_range>0</is_search_range>
+            <weight>23</weight>
+            <help_post>Als dit veld gevuld is, is inschrijving niet meer mogelijk binnen x dagen van de start van het
+                evenement.
+            </help_post>
+            <is_active>1</is_active>
+            <is_view>0</is_view>
+            <text_length>255</text_length>
+            <note_columns>60</note_columns>
+            <note_rows>4</note_rows>
+            <column_name>registration_until</column_name>
+            <custom_group_name>regioconf_options</custom_group_name>
+        </CustomField>
+    </CustomFields>
+    <OptionGroups>
+        <OptionGroup>
+            <name>toegankelijk_voor_sp_regio_s_20150912002709</name>
+            <title>Toegankelijk voor SP-regio's</title>
+            <is_reserved>1</is_reserved>
+            <is_active>1</is_active>
+        </OptionGroup>
+    </OptionGroups>
+    <OptionValues>
+        <OptionValue>
+            <label>SP-regio Drenthe</label>
+            <value>806800</value>
+            <name>SP_regio_Drenthe</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Flevoland</label>
+            <value>806812</value>
+            <name>SP_regio_Flevoland</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Friesland</label>
+            <value>806865</value>
+            <name>SP_regio_Friesland</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Gelderland Noord en Oost</label>
+            <value>806825</value>
+            <name>SP_regio_Gelderland_Noord_en_Oost</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Gelderland-Zuid</label>
+            <value>806831</value>
+            <name>SP_regio_Gelderland_Zuid</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Groningen</label>
+            <value>806828</value>
+            <name>SP_regio_Groningen</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Haaglanden</label>
+            <value>806868</value>
+            <name>SP_regio_Haaglanden</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Limburg Noord</label>
+            <value>806882</value>
+            <name>SP_regio_Limburg_Noord</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Limburg Zuid</label>
+            <value>806853</value>
+            <name>SP_regio_Limburg_Zuid</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Noord-Brabant Noord-Oost</label>
+            <value>806841</value>
+            <name>SP_regio_Noord_Brabant_Noord_Oost</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Noord-Brabant West</label>
+            <value>806837</value>
+            <name>SP_regio_Noord_Brabant_West</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Noord-Brabant Zuid-Oost</label>
+            <value>806848</value>
+            <name>SP_regio_Noord_Brabant_Zuid_Oost</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Noord-Holland Midden</label>
+            <value>806820</value>
+            <name>SP_regio_Noord_Holland_Midden</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Noord-Holland Noord</label>
+            <value>806806</value>
+            <name>SP_regio_Noord_Holland_Noord</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Noord-Holland Zuid</label>
+            <value>806822</value>
+            <name>SP_regio_Noord_Holland_Zuid</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Overijssel</label>
+            <value>806809</value>
+            <name>SP_regio_Overijssel</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Rijnmond Oost</label>
+            <value>806803</value>
+            <name>SP_regio_Rijnmond_Oost</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Rijnmond West</label>
+            <value>806851</value>
+            <name>SP_regio_Rijnmond_West</name>
+            <is_default>0</is_default>
+            <weight>2</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Utrecht</label>
+            <value>806817</value>
+            <name>SP_Regio_Utrecht</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Zeeland</label>
+            <value>806894</value>
+            <name>SP_Regio_Zeeland</name>
+            <is_default>0</is_default>
+            <weight>1</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+        <OptionValue>
+            <label>SP-regio Zuid Holland Noord</label>
+            <value>806815</value>
+            <name>SP_regio_Zuid_Holland_Noord</name>
+            <is_default>0</is_default>
+            <weight>3</weight>
+            <is_optgroup>0</is_optgroup>
+            <is_reserved>0</is_reserved>
+            <is_active>1</is_active>
+            <option_group_name>toegankelijk_voor_sp_regio_s_20150912002709</option_group_name>
+        </OptionValue>
+    </OptionValues>
+</CustomData>
