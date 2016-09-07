@@ -2,6 +2,11 @@
 
 require_once 'spgeneric.civix.php';
 
+function spgeneric_civicrm_dashboard_defaults($availableDashlets, &$defaultDashlets){
+  unset($defaultDashlets['getting-started']);
+  unset($defaultDashlets['blog']);
+}
+
 /**
  * Implementation of hook_civicrm_config
  *
