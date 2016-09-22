@@ -7,6 +7,14 @@ function spgeneric_civicrm_dashboard_defaults($availableDashlets, &$defaultDashl
   unset($defaultDashlets['blog']);
 }
 
+function spgeneric_civicrm_alterContent(  &$content, $context, $tplName, &$object ) {
+  if ($tplName == 'CRM/Contact/Form/Task/PDF.tpl') {
+    $template = CRM_Core_Smarty::singleton();
+    $template->assign('form', $object->get_template_vars('form'));
+    $content .= $template->fetch('CRM/Spgeneric/Form/Task/PDF.tpl');
+  }
+}
+
 /**
  * Implementation of hook_civicrm_config
  *
