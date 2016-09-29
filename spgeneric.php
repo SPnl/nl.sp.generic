@@ -947,4 +947,12 @@ function spgeneric_civicrm_buildForm($formName, &$form) {
    $toonGezinsleden = new CRM_Spgeneric_Buildform_ToonGezinsleden($form);
    $toonGezinsleden->parse();
  }
+ // On the activity FORM set the priority to normal by default
+ if ($form instanceof CRM_Activity_Form_Activity) {
+   if ($form->getAction() == CRM_Core_Action::ADD) {
+     $normalPriority = civicrm_api3('OptionValue', 'getsingle', array('option_group_name' => 'priority', 'name' => 'normal'));
+     $defaults['priority_id'] = $normalPriority['value'];
+     $form->setDefaults($defaults);
+   }
+ }
 }
