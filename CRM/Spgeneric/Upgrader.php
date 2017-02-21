@@ -29,17 +29,6 @@ class CRM_Spgeneric_Upgrader extends CRM_Spgeneric_Upgrader_Base {
     return true ;
   }
 
-  public function upgrade_1003() {
-    $dao = CRM_Core_DAO::executeQuery("SELECT entity_id FROM `civicrm_value_communicatie` WHERE geen_post = 1");
-    while ($dao->fetch()) {
-      civicrm_api3('Odoo', 'resync', array(
-        'object_name' => 'civicrm_contact',
-        'id' => $dao->entity_id
-      ));
-    }
-    return true;
-  }
-
   public function install() {
     $this->executeCustomDataFile('xml/communicatie.xml');
   }
