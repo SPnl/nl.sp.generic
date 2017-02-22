@@ -22,10 +22,9 @@
   <CustomFields>
     <CustomField>
       <name>geen_post</name>
-      <label>Geen post</label>
-      <data_type>Boolean</data_type>
-      <html_type>Radio</html_type>
-      <default_value>0</default_value>
+      <label>Geen post versturen</label>
+      <data_type>String</data_type>
+      <html_type>CheckBox</html_type>
       <is_required>0</is_required>
       <is_searchable>1</is_searchable>
       <is_search_range>0</is_search_range>
@@ -37,6 +36,7 @@
       <note_rows>4</note_rows>
       <column_name>geen_post</column_name>
       <in_selector>0</in_selector>
+      <option_group_name>geen_post</option_group_name>
       <custom_group_name>communicatie</custom_group_name>
     </CustomField>
     <CustomField>
@@ -67,6 +67,13 @@
       <is_active>1</is_active>
       <is_locked>0</is_locked>
     </OptionGroup>
+    <OptionGroup>
+      <name>geen_post</name>
+      <title>Geen Post</title>
+      <is_reserved>1</is_reserved>
+      <is_active>1</is_active>
+      <is_locked>0</is_locked>
+    </OptionGroup>
   </OptionGroups>
   <OptionValues>
     <OptionValue>
@@ -92,15 +99,37 @@
       <option_group_name>reden_geen_post</option_group_name>
     </OptionValue>
     <OptionValue>
-      <label>Overige reden</label>
+      <label>Opgezegd</label>
       <value>3</value>
-      <name>Overige_reden</name>
+      <name>Opgezegd</name>
       <is_default>0</is_default>
       <weight>3</weight>
       <is_optgroup>0</is_optgroup>
       <is_reserved>0</is_reserved>
       <is_active>1</is_active>
       <option_group_name>reden_geen_post</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Overige reden</label>
+      <value>4</value>
+      <name>Overige_reden</name>
+      <is_default>0</is_default>
+      <weight>4</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>reden_geen_post</option_group_name>
+    </OptionValue>
+    <OptionValue>
+      <label>Geen post meer versturen</label>
+      <value>1</value>
+      <name>Geen_post_meer_versturen</name>
+      <is_default>0</is_default>
+      <weight>1</weight>
+      <is_optgroup>0</is_optgroup>
+      <is_reserved>0</is_reserved>
+      <is_active>1</is_active>
+      <option_group_name>geen_post</option_group_name>
     </OptionValue>
   </OptionValues>
 </CustomData>

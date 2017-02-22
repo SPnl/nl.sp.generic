@@ -120,25 +120,6 @@
       <custom_group_name>Migratie_Contacten</custom_group_name>
     </CustomField>
     <CustomField>
-      <name>Retourpost</name>
-      <label>Retourpost</label>
-      <data_type>String</data_type>
-      <html_type>Radio</html_type>
-      <default_value>0</default_value>
-      <is_required>0</is_required>
-      <is_searchable>1</is_searchable>
-      <is_search_range>0</is_search_range>
-      <weight>60</weight>
-      <is_active>1</is_active>
-      <is_view>0</is_view>
-      <text_length>255</text_length>
-      <note_columns>60</note_columns>
-      <note_rows>4</note_rows>
-      <column_name>retourpost_3</column_name>
-      <option_group_name>retourpost_20140703093210</option_group_name>
-      <custom_group_name>Migratie_Contacten</custom_group_name>
-    </CustomField>
-    <CustomField>
       <name>Bron</name>
       <label>Bron</label>
       <data_type>String</data_type>
@@ -377,12 +358,6 @@
       <is_active>1</is_active>
     </OptionGroup>
     <OptionGroup>
-      <name>retourpost_20140703093210</name>
-      <title>Retourpost</title>
-      <is_reserved>1</is_reserved>
-      <is_active>1</is_active>
-    </OptionGroup>
-    <OptionGroup>
       <name>heeft_cadeau_gehad_20140708114726</name>
       <title>Heeft cadeau gehad</title>
       <is_reserved>1</is_reserved>
@@ -587,39 +562,6 @@
       <is_reserved>0</is_reserved>
       <is_active>1</is_active>
       <option_group_name>bron_20140408105127</option_group_name>
-    </OptionValue>
-    <OptionValue>
-      <label>Ja</label>
-      <value>1</value>
-      <name>Ja</name>
-      <is_default>0</is_default>
-      <weight>1</weight>
-      <is_optgroup>0</is_optgroup>
-      <is_reserved>0</is_reserved>
-      <is_active>1</is_active>
-      <option_group_name>retourpost_20140703093210</option_group_name>
-    </OptionValue>
-    <OptionValue>
-      <label>Nee</label>
-      <value>0</value>
-      <name>Nee</name>
-      <is_default>0</is_default>
-      <weight>1</weight>
-      <is_optgroup>0</is_optgroup>
-      <is_reserved>0</is_reserved>
-      <is_active>1</is_active>
-      <option_group_name>retourpost_20140703093210</option_group_name>
-    </OptionValue>
-    <OptionValue>
-      <label>Ja met reden</label>
-      <value>1</value>
-      <name>Ja_met_reden</name>
-      <is_default>0</is_default>
-      <weight>2</weight>
-      <is_optgroup>0</is_optgroup>
-      <is_reserved>0</is_reserved>
-      <is_active>1</is_active>
-      <option_group_name>retourpost_20140703093210</option_group_name>
     </OptionValue>
     <OptionValue>
       <label>Ja</label>
