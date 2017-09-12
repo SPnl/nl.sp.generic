@@ -1,0 +1,13 @@
+{
+    "name": "spnl/nl.sp.generic",
+    "description": "Generic customisations for SP",
+    "type": "civicrm-module",
+    "license": "AGPL-3.0",
+    "authors": [
+        {
+            "name": "Delano de Rooij",
+            "email": "delano.derooij@civicoop.org"
+        }
+    ],
+    "require": {}
+}

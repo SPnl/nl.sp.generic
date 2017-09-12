@@ -8,13 +8,13 @@
     <author>Delano de Rooij</author>
     <email>delano.derooij@civicoop.org</email>
   </maintainer>
-  <releaseDate>2017-02-22</releaseDate>
-  <version>1.4.1</version>
+  <releaseDate>2017-09-12</releaseDate>
+  <version>1.4.2</version>
   <develStage>stable</develStage>
   <compatibility>
     <ver>4.6</ver>
   </compatibility>
-  <comments></comments>
+  <comments/>
   <civix>
     <namespace>CRM/Spgeneric</namespace>
   </civix>
